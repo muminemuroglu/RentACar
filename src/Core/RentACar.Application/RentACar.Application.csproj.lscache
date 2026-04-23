@@ -61,6 +61,10 @@ DTOs/Auth/
  RegisterCompanyDto.cs
  RegisterCustomerDto.cs
  RegisterDto.cs
+DTOs/Brand/
+ BrandCreateDto.cs
+ BrandDto.cs
+ BrandUpdateDto.cs
 DTOs/Car/
  AvailableCarSearchDto.cs
  CarCreateDto.cs
@@ -75,6 +79,10 @@ DTOs/Customer/
  CustomerDeleteDto.cs
  CustomerDto.cs
  CustomerUpdateDto.cs
+DTOs/Location/
+ LocationCreateDto.cs
+ LocationDto.cs
+ LocationUpdateDto.cs
 DTOs/Rental/
  RentalCreateDto.cs
  RentalDeleteDto.cs
@@ -94,6 +102,9 @@ Helpers/
  PaswordHasher.cs
 Interfaces/
  IAuthService.cs
+ IBrandService.cs
+ ICarService.cs
+ ILocationService.cs
  IUserService.cs
 Mappings/AutoMapperProfile.cs
 obj/Debug/net9.0/

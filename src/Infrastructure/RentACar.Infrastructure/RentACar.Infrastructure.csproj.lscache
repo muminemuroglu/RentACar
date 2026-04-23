@@ -80,6 +80,9 @@ Repositories/
  UnitOfWork.cs
 Services/
  AuthService.cs
+ BrandService.cs
+ CarService.cs
+ LocationService.cs
  UserService.cs
 
 [metadataReferences]
