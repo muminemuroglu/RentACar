@@ -66,6 +66,10 @@ Migrations/
  20260421082550_InitialFix3.Designer.cs
  20260421083237_InitialFix4.cs
  20260421083237_InitialFix4.Designer.cs
+ 20260422083306_InitialFix5.cs
+ 20260422083306_InitialFix5.Designer.cs
+ 20260423043910_InitialFix6.cs
+ 20260423043910_InitialFix6.Designer.cs
  AppDbContextModelSnapshot.cs
 obj/Debug/net9.0/
  .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
@@ -74,7 +78,9 @@ obj/Debug/net9.0/
 Repositories/
  GenericRepository.cs
  UnitOfWork.cs
-Services/AuthService.cs
+Services/
+ AuthService.cs
+ UserService.cs
 
 [metadataReferences]
 ../../Core/

@@ -54,7 +54,9 @@ TemporaryDependencyNodeTargetIdentifier=net9.0
 
 [sourceFiles]
 Authorization/CompanyDataIsolationHandler.cs
-Controllers/AuthController.cs
+Controllers/
+ AuthController.cs
+ UserController.cs
 Middleware/GlobalExceptionHandler.cs
 obj/Debug/net9.0/
  .NETCoreApp,Version=v9.0.AssemblyAttributes.cs

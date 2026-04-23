@@ -61,6 +61,7 @@ Entities/
  Company.cs
  Customer.cs
  Location.cs
+ PaginationModel.cs
  Rental.cs
  User.cs
 Interfaces/

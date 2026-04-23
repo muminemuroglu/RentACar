@@ -90,8 +90,11 @@ DTOs/User/
  UserUpdateDto.cs
 Helpers/
  JwtTokenHelper.cs
+ MappingExtensions.cs
  PaswordHasher.cs
-Interfaces/IAuthService.cs
+Interfaces/
+ IAuthService.cs
+ IUserService.cs
 Mappings/AutoMapperProfile.cs
 obj/Debug/net9.0/
  .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
