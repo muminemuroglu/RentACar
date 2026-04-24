@@ -55,10 +55,13 @@ TemporaryDependencyNodeTargetIdentifier=net9.0
 [sourceFiles]
 Authorization/CompanyDataIsolationHandler.cs
 Controllers/
+ AdditionalServiceController.cs
  AuthController.cs
  BrandController.cs
  CarControlller.cs
+ DashboardController.cs
  LocationController.cs
+ RentalController.cs
  UserController.cs
 Middleware/GlobalExceptionHandler.cs
 obj/Debug/net9.0/

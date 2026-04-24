@@ -54,6 +54,11 @@ TemporaryDependencyNodeTargetIdentifier=net9.0
 
 [sourceFiles]
 DependencyInjection.cs
+DTOs/AdditionalService/
+ AdditionalServiceCreateDto.cs
+ AdditionalServiceDeleteDto.cs
+ AdditionalServiceDto.cs
+ AdditionalServiceUpdateDto.cs
 DTOs/Auth/
  AuthResponseDto.cs
  ChangePasswordDto.cs
@@ -79,32 +84,37 @@ DTOs/Customer/
  CustomerDeleteDto.cs
  CustomerDto.cs
  CustomerUpdateDto.cs
-DTOs/Location/
- LocationCreateDto.cs
- LocationDto.cs
- LocationUpdateDto.cs
-DTOs/Rental/
- RentalCreateDto.cs
- RentalDeleteDto.cs
- RentalDto.cs
- RentalUpdateDto.cs
-DTOs/Responses/
- ApiResponse.cs
- PaginatedResult.cs
-DTOs/User/
- UserCreateDto.cs
- UserDeleteDto.cs
- UserDto.cs
- UserUpdateDto.cs
+DTOs/
+ Dashboard/DashboardStatsDto.cs
+ Location/
+  LocationCreateDto.cs
+  LocationDto.cs
+  LocationUpdateDto.cs
+ Rental/
+  RentalCreateDto.cs
+  RentalDeleteDto.cs
+  RentalDto.cs
+  RentalUpdateDto.cs
+ Responses/
+  ApiResponse.cs
+  PaginatedResult.cs
+ User/
+  UserCreateDto.cs
+  UserDeleteDto.cs
+  UserDto.cs
+  UserUpdateDto.cs
 Helpers/
  JwtTokenHelper.cs
  MappingExtensions.cs
  PaswordHasher.cs
 Interfaces/
+ IAdditionalServiceService.cs
  IAuthService.cs
  IBrandService.cs
  ICarService.cs
+ IDashboardService.cs
  ILocationService.cs
+ IRentalService.cs
  IUserService.cs
 Mappings/AutoMapperProfile.cs
 obj/Debug/net9.0/

@@ -79,10 +79,13 @@ Repositories/
  GenericRepository.cs
  UnitOfWork.cs
 Services/
+ AdditionalService.cs
  AuthService.cs
  BrandService.cs
  CarService.cs
+ DashboardService.cs
  LocationService.cs
+ RentalService.cs
  UserService.cs
 
 [metadataReferences]
