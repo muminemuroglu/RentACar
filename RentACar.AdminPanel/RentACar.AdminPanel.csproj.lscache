@@ -53,17 +53,23 @@ TemporaryDependencyNodeTargetIdentifier=net9.0
 /warnaserror+:NU1605,SYSLIB0011
 
 [sourceFiles]
-Controllers/HomeController.cs
-Models/ErrorViewModel.cs
+Controllers/
+ AuthController.cs
+ HomeController.cs
+Models/
+ ApiResponse.cs
+ ErrorViewModel.cs
+ LoginViewModel.cs
 obj/Debug/net9.0/
  .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
  RentACar.AdminPanel.AssemblyInfo.cs
  RentACar.AdminPanel.GlobalUsings.g.cs
  RentACar.AdminPanel.RazorAssemblyInfo.cs
 Program.cs
+Services/BaseApiService.cs
 
 [metadataReferences]
-<DOTNET>/packs/Microsoft.AspNetCore.App.Ref/9.0.3/ref/net9.0/
+../../../../../usr/local/share/dotnet/packs/Microsoft.AspNetCore.App.Ref/9.0.3/ref/net9.0/
  Microsoft.AspNetCore.Antiforgery.dll
  Microsoft.AspNetCore.Authentication.Abstractions.dll
  Microsoft.AspNetCore.Authentication.BearerToken.dll
@@ -153,7 +159,6 @@ Program.cs
  Microsoft.AspNetCore.WebUtilities.dll
  Microsoft.Extensions.Caching.Abstractions.dll
  Microsoft.Extensions.Caching.Memory.dll
- Microsoft.Extensions.Configuration.Abstractions.dll
  Microsoft.Extensions.Configuration.Binder.dll
  Microsoft.Extensions.Configuration.CommandLine.dll
  Microsoft.Extensions.Configuration.dll
@@ -195,14 +200,13 @@ Program.cs
  Microsoft.Extensions.Options.ConfigurationExtensions.dll
  Microsoft.Extensions.Options.DataAnnotations.dll
  Microsoft.Extensions.Options.dll
- Microsoft.Extensions.Primitives.dll
  Microsoft.Extensions.WebEncoders.dll
  Microsoft.JSInterop.dll
  Microsoft.Net.Http.Headers.dll
  System.Diagnostics.EventLog.dll
  System.Security.Cryptography.Xml.dll
  System.Threading.RateLimiting.dll
-<DOTNET>/packs/Microsoft.NETCore.App.Ref/9.0.3/ref/net9.0/
+../../../../../usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.3/ref/net9.0/
  Microsoft.CSharp.dll
  Microsoft.VisualBasic.Core.dll
  Microsoft.VisualBasic.dll
@@ -367,58 +371,84 @@ Program.cs
  System.Xml.XPath.dll
  System.Xml.XPath.XDocument.dll
  WindowsBase.dll
+../src/Core/
+ RentACar.Application/obj/Debug/net9.0/ref/RentACar.Application.dll
+ RentACar.Domain/obj/Debug/net9.0/ref/RentACar.Domain.dll
+<NUGET>/
+ automapper.extensions.microsoft.dependencyinjection/12.0.1/lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+ automapper/12.0.1/lib/netstandard2.1/AutoMapper.dll
+ bcrypt.net-next/4.0.3/lib/net6.0/BCrypt.Net-Next.dll
+ closedxml.parser/2.0.0/lib/netstandard2.1/ClosedXML.Parser.dll
+ closedxml/0.105.0/lib/netstandard2.1/ClosedXML.dll
+ documentformat.openxml.framework/3.1.1/lib/net8.0/DocumentFormat.OpenXml.Framework.dll
+ documentformat.openxml/3.1.1/lib/net8.0/DocumentFormat.OpenXml.dll
+ excelnumberformat/1.1.0/lib/netstandard2.0/ExcelNumberFormat.dll
+ microsoft.extensions.configuration.abstractions/10.0.1/lib/net9.0/Microsoft.Extensions.Configuration.Abstractions.dll
+ microsoft.extensions.primitives/10.0.1/lib/net9.0/Microsoft.Extensions.Primitives.dll
+ microsoft.identitymodel.abstractions/8.15.0/lib/net9.0/Microsoft.IdentityModel.Abstractions.dll
+ microsoft.identitymodel.jsonwebtokens/8.15.0/lib/net9.0/Microsoft.IdentityModel.JsonWebTokens.dll
+ microsoft.identitymodel.logging/8.15.0/lib/net9.0/Microsoft.IdentityModel.Logging.dll
+ microsoft.identitymodel.tokens/8.15.0/lib/net9.0/Microsoft.IdentityModel.Tokens.dll
+ rbush.signed/4.0.0/lib/net8.0/RBush.dll
+ sixlabors.fonts/1.0.0/lib/netcoreapp3.1/SixLabors.Fonts.dll
+ system.identitymodel.tokens.jwt/8.15.0/lib/net9.0/System.IdentityModel.Tokens.Jwt.dll
+ system.io.packaging/8.0.1/lib/net8.0/System.IO.Packaging.dll
 
 [analyzerReferences]
-<DOTNET>/packs/Microsoft.AspNetCore.App.Ref/9.0.3/analyzers/dotnet/cs/
+../../../../../usr/local/share/dotnet/packs/Microsoft.AspNetCore.App.Ref/9.0.3/analyzers/dotnet/cs/
  Microsoft.AspNetCore.App.Analyzers.dll
  Microsoft.AspNetCore.App.CodeFixes.dll
  Microsoft.AspNetCore.Components.Analyzers.dll
-<DOTNET>/packs/Microsoft.AspNetCore.App.Ref/9.0.3/analyzers/dotnet/roslyn4.4/cs/
+../../../../../usr/local/share/dotnet/packs/Microsoft.AspNetCore.App.Ref/9.0.3/analyzers/dotnet/roslyn4.4/cs/
  Microsoft.Extensions.Logging.Generators.dll
  Microsoft.Extensions.Options.SourceGeneration.dll
-<DOTNET>/packs/Microsoft.NETCore.App.Ref/9.0.3/analyzers/dotnet/cs/
+../../../../../usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.3/analyzers/dotnet/cs/
  Microsoft.Interop.ComInterfaceGenerator.dll
  Microsoft.Interop.JavaScript.JSImportGenerator.dll
  Microsoft.Interop.LibraryImportGenerator.dll
  Microsoft.Interop.SourceGeneration.dll
  System.Text.Json.SourceGeneration.dll
  System.Text.RegularExpressions.Generator.dll
-<DOTNET>/sdk/9.0.202/Sdks/Microsoft.NET.Sdk.Razor/source-generators/
+../../../../../usr/local/share/dotnet/sdk/9.0.202/Sdks/Microsoft.NET.Sdk.Razor/source-generators/
  Microsoft.AspNetCore.Razor.Utilities.Shared.dll
  Microsoft.CodeAnalysis.Razor.Compiler.dll
  Microsoft.Extensions.ObjectPool.dll
  System.Collections.Immutable.dll
-<DOTNET>/sdk/9.0.202/Sdks/Microsoft.NET.Sdk.Web/analyzers/cs/
+../../../../../usr/local/share/dotnet/sdk/9.0.202/Sdks/Microsoft.NET.Sdk.Web/analyzers/cs/
  Microsoft.AspNetCore.Analyzers.dll
  Microsoft.AspNetCore.Mvc.Analyzers.dll
-<DOTNET>/sdk/9.0.202/Sdks/Microsoft.NET.Sdk/analyzers/
+../../../../../usr/local/share/dotnet/sdk/9.0.202/Sdks/Microsoft.NET.Sdk/analyzers/
  Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll
  Microsoft.CodeAnalysis.NetAnalyzers.dll
 
 [analyzerConfigFiles]
-<DOTNET>/sdk/9.0.202/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_9_default.globalconfig
+../../../../../usr/local/share/dotnet/sdk/9.0.202/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_9_default.globalconfig
 obj/Debug/net9.0/RentACar.AdminPanel.GeneratedMSBuildEditorConfig.editorconfig
 
 [additionalFiles]
-Views/Home/
- Index.cshtml
- Privacy.cshtml
-Views/Shared/
- Error.cshtml
- _Layout.cshtml
- _ValidationScriptsPartial.cshtml
 Views/
+ Auth/Login.cshtml
+ Home/
+  Index.cshtml
+  Privacy.cshtml
+ Shared/
+  Error.cshtml
+  _AuthLayout.cshtml
+  _Layout.cshtml
+  _ValidationScriptsPartial.cshtml
  _ViewImports.cshtml
  _ViewStart.cshtml
 
 [dynamicFiles]
-Views/Home/
- Index.cshtml
- Privacy.cshtml
-Views/Shared/
- Error.cshtml
- _Layout.cshtml
- _ValidationScriptsPartial.cshtml
 Views/
+ Auth/Login.cshtml
+ Home/
+  Index.cshtml
+  Privacy.cshtml
+ Shared/
+  Error.cshtml
+  _AuthLayout.cshtml
+  _Layout.cshtml
+  _ValidationScriptsPartial.cshtml
  _ViewImports.cshtml
  _ViewStart.cshtml
