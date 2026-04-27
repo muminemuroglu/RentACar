@@ -55,9 +55,11 @@ TemporaryDependencyNodeTargetIdentifier=net9.0
 [sourceFiles]
 Controllers/
  AuthController.cs
+ CarController.cs
  HomeController.cs
 Models/
  ApiResponse.cs
+ CarViewModel.cs
  ErrorViewModel.cs
  LoginViewModel.cs
 obj/Debug/net9.0/
