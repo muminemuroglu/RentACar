@@ -12,11 +12,13 @@ public class AuthService : IAuthService
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
+    private readonly IJwtTokenHelper _jwtTokenHelper;
 
-    public AuthService(IUnitOfWork unitOfWork, IMapper mapper)
+    public AuthService(IUnitOfWork unitOfWork, IMapper mapper, IJwtTokenHelper jwtTokenHelper)
     {
         _unitOfWork = unitOfWork;
         _mapper = mapper;
+        _jwtTokenHelper = jwtTokenHelper;
     }
 
     public async Task<ApiResponse<string>> LoginAsync(LoginDto dto)
@@ -28,7 +30,7 @@ public class AuthService : IAuthService
 
         string fullName = $"{user.FirstName} {user.LastName}";
 
-        var token = JwtTokenHelper.GenerateToken(
+        var token = _jwtTokenHelper.GenerateToken(
             user.Id,
             user.Email,
             fullName, 

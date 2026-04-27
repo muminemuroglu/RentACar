@@ -49,7 +49,7 @@ namespace RentACar.RestApi.Middleware
             var statusCode = StatusCodes.Status400BadRequest;
             var response = new
             {
-                error = exception.Message,
+                error = "Beklenmeyen bir hata oluştu. Lütfen daha sonra tekrar deneyiniz.",
                 code = statusCode,
                 timestamp = DateTime.UtcNow
             };

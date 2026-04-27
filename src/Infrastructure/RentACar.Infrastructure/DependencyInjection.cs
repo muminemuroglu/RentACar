@@ -5,6 +5,7 @@ using RentACar.Infrastructure.Context;
 using RentACar.Infrastructure.Repositories;
 using RentACar.Application.Interfaces;
 using RentACar.Infrastructure.Services;
+using RentACar.Application.Helpers;
 
 namespace RentACar.Infrastructure;
 
@@ -26,6 +27,8 @@ public static class DependencyInjection
         services.AddScoped<IRentalService, RentalService>();
         services.AddScoped<IAdditionalServiceService, AdditionalServiceService>();
         services.AddScoped<IDashboardService, DashboardService>();
+        // Mevcut servisler...
+services.AddScoped<IJwtTokenHelper, JwtTokenHelper>();
 
         return services;
     }
