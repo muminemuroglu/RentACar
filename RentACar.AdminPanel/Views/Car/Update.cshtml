@@ -1,7 +1,7 @@
 @using RentACar.Application.DTOs.Brand
 @using RentACar.Application.DTOs.Location
 @using RentACar.Domain.Entities
-@model CarEditViewModel
+@model CarUpdateViewModel
 @{
     ViewData["Title"] = "Araç Düzenle";
     ViewData["Breadcrumb"] = "Araç Düzenle";
@@ -17,7 +17,7 @@
 <div style="display: grid; grid-template-columns: 1fr 350px; gap: 20px; max-width: 1000px;">
 
     @* ── Form ── *@
-    <form asp-action="Edit" asp-route-id="@Model.Id" method="post" enctype="multipart/form-data" class="card">
+    <form asp-action="Update" asp-route-id="@Model.Id" method="post" enctype="multipart/form-data" class="card">
         @Html.AntiForgeryToken()
         <input type="hidden" asp-for="Id" />
 
@@ -99,10 +99,10 @@
             <div class="form-group">
                 <label class="form-label">Araç Resmi</label>
 
-                @if (!string.IsNullOrEmpty(Model.CurrentImageUrl))
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
                 {
                     <div style="margin-bottom: 12px;">
-                        <img src="@Model.CurrentImageUrl" alt="@Model.Model" 
+                        <img src="@Model.ImageUrl" alt="@Model.Model" 
                              style="max-width: 100%; max-height: 200px; border-radius: var(--radius-md); border: 1px solid var(--border-color);" />
                     </div>
                 }

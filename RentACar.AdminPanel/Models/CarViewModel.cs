@@ -61,7 +61,7 @@ public class CarCreateViewModel
 /// <summary>
 /// Araç güncelleme formunda kullanılacak
 /// </summary>
-public class CarEditViewModel
+public class CarUpdateViewModel
 {
     [Required]
     public int Id { get; set; }
@@ -95,7 +95,7 @@ public class CarEditViewModel
     public CarStatus Status { get; set; }
 
     // Mevcut resim URL'i (düzenleme anında gösterim için)
-    public string? CurrentImageUrl { get; set; }
+    public string? ImageUrl { get; set; }
 
     [FileExtensions(Extensions = "jpg,jpeg,png,gif", ErrorMessage = "Sadece jpg, jpeg, png, gif dosyaları yüklenebilir.")]
     public IFormFile? ImageFile { get; set; }

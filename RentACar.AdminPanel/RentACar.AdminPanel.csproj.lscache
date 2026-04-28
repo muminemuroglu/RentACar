@@ -433,8 +433,8 @@ Views/Auth/
  Login.cshtml
 Views/Car/
  Create.cshtml
- Edit.cshtml
  Index.cshtml
+ Update.cshtml
 Views/Home/
  Index.cshtml
  Privacy.cshtml
@@ -453,8 +453,8 @@ Views/Auth/
  Login.cshtml
 Views/Car/
  Create.cshtml
- Edit.cshtml
  Index.cshtml
+ Update.cshtml
 Views/Home/
  Index.cshtml
  Privacy.cshtml
