@@ -704,7 +704,6 @@ button { cursor: pointer; font-family: var(--font); border: none; background: no
 }
 
 .table tbody tr:last-child td { border-bottom: none; }
-
 .table tbody tr { transition: background 0.1s; }
 .table tbody tr:hover td { background: var(--bg-elevated); color: var(--text-primary); }
 

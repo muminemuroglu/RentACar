@@ -431,6 +431,10 @@ obj/Debug/net9.0/RentACar.AdminPanel.GeneratedMSBuildEditorConfig.editorconfig
 Views/Auth/
  Accessdenied.cshtml
  Login.cshtml
+Views/Car/
+ Create.cshtml
+ Edit.cshtml
+ Index.cshtml
 Views/Home/
  Index.cshtml
  Privacy.cshtml
@@ -447,6 +451,10 @@ Views/
 Views/Auth/
  Accessdenied.cshtml
  Login.cshtml
+Views/Car/
+ Create.cshtml
+ Edit.cshtml
+ Index.cshtml
 Views/Home/
  Index.cshtml
  Privacy.cshtml

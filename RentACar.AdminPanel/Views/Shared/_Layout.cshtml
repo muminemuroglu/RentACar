@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="tr" data-theme="dark">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,6 +10,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
 </head>
+
 <body class="admin-body">
 
     @* ─── Sidebar ─── *@
@@ -26,7 +28,8 @@
         <nav class="sidebar-nav">
             <ul class="nav-list">
 
-                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" ? "active" : "")">
+                <li
+                    class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" ? "active" : "")">
                     <a asp-controller="Home" asp-action="Index" class="nav-link" data-tooltip="Dashboard">
                         <span class="nav-icon"><i class="fa-solid fa-gauge-high"></i></span>
                         <span class="nav-label">Dashboard</span>
@@ -40,36 +43,42 @@
                     </a>
                 </li>
 
-                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Brand" ? "active" : "")">
+                <li
+                    class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Brand" ? "active" : "")">
                     <a asp-controller="Brand" asp-action="Index" class="nav-link" data-tooltip="Markalar">
                         <span class="nav-icon"><i class="fa-solid fa-tag"></i></span>
                         <span class="nav-label">Markalar</span>
                     </a>
                 </li>
 
-                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Location" ? "active" : "")">
+                <li
+                    class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Location" ? "active" : "")">
                     <a asp-controller="Location" asp-action="Index" class="nav-link" data-tooltip="Şubeler">
                         <span class="nav-icon"><i class="fa-solid fa-location-dot"></i></span>
                         <span class="nav-label">Şubeler</span>
                     </a>
                 </li>
 
-                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Rental" ? "active" : "")">
+                <li
+                    class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Rental" ? "active" : "")">
                     <a asp-controller="Rental" asp-action="Index" class="nav-link" data-tooltip="Kiralamalar">
                         <span class="nav-icon"><i class="fa-solid fa-file-contract"></i></span>
                         <span class="nav-label">Kiralamalar</span>
                     </a>
                 </li>
 
-                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "User" ? "active" : "")">
+                <li
+                    class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "User" ? "active" : "")">
                     <a asp-controller="User" asp-action="Index" class="nav-link" data-tooltip="Kullanıcılar">
                         <span class="nav-icon"><i class="fa-solid fa-users"></i></span>
                         <span class="nav-label">Kullanıcılar</span>
                     </a>
                 </li>
 
-                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "AdditionalService" ? "active" : "")">
-                    <a asp-controller="AdditionalService" asp-action="Index" class="nav-link" data-tooltip="Ek Hizmetler">
+                <li
+                    class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "AdditionalService" ? "active" : "")">
+                    <a asp-controller="AdditionalService" asp-action="Index" class="nav-link"
+                           data-tooltip="Ek Hizmetler">
                         <span class="nav-icon"><i class="fa-solid fa-puzzle-piece"></i></span>
                         <span class="nav-label">Ek Hizmetler</span>
                     </a>
@@ -83,7 +92,8 @@
             <div class="nav-divider"></div>
 
             <ul class="nav-list">
-                <li class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Profile" ? "active" : "")">
+                <li
+                    class="nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Profile" ? "active" : "")">
                     <a asp-controller="Profile" asp-action="Index" class="nav-link" data-tooltip="Profil">
                         <span class="nav-icon"><i class="fa-solid fa-circle-user"></i></span>
                         <span class="nav-label">Profil</span>
@@ -207,4 +217,4 @@
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
-</html>
+</html><

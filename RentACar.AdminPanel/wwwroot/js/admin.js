@@ -155,7 +155,7 @@
     document.body.style.overflow = 'hidden';
   };
 
-  window.closeModal = function (id) {
+   window.closeModal = function (id) {
     document.getElementById(id)?.classList.remove('show');
     document.body.style.overflow = '';
   };
