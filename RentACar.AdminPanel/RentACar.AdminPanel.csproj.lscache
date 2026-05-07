@@ -54,14 +54,32 @@ TemporaryDependencyNodeTargetIdentifier=net9.0
 
 [sourceFiles]
 Controllers/
+ AdditionalServiceController.cs
  AuthController.cs
+ BrandController.cs
  CarController.cs
+ CustomerController.cs
+ DashboardController.cs
  HomeController.cs
+ LocationController.cs
+ ProfileController.cs
+ RentalController.cs
+ UserController.cs
 Models/
+ AdditionalServiceViewModel.cs
  ApiResponse.cs
- CarViewModel.cs
+ BrandViewModel.cs
+ Car/
+  CarListViewModel.cs
+  CreateViewModel.cs
+  EditViewModel.cs
+ CustomerViewModel.cs
  ErrorViewModel.cs
+ LocationViewModel.cs
  LoginViewModel.cs
+ ProfileViewModel.cs
+ RentalViewModel.cs
+ UserViewModel.cs
 obj/Debug/net9.0/
  .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
  RentACar.AdminPanel.AssemblyInfo.cs
@@ -428,41 +446,85 @@ Services/BaseApiService.cs
 obj/Debug/net9.0/RentACar.AdminPanel.GeneratedMSBuildEditorConfig.editorconfig
 
 [additionalFiles]
+Views/AdditionalService/
+ Create.cshtml
+ Edit.cshtml
+ Index.cshtml
 Views/Auth/
  Accessdenied.cshtml
  Login.cshtml
+Views/Brand/
+ Create.cshtml
+ Edit.cshtml
+ Index.cshtml
 Views/Car/
  Create.cshtml
+ Edit.cshtml
  Index.cshtml
- Update.cshtml
-Views/Home/
- Index.cshtml
- Privacy.cshtml
-Views/Shared/
- Error.cshtml
- _AuthLayout.cshtml
- _Layout.cshtml
- _ValidationScriptsPartial.cshtml
 Views/
+ Customer/Index.cshtml
+ Dashboard/Index.cshtml
+ Home/
+  Index.cshtml
+  Privacy.cshtml
+ Location/
+  Create.cshtml
+  Edit.cshtml
+  Index.cshtml
+ Profile/Index.cshtml
+ Rental/
+  Create.cshtml
+  Index.cshtml
+ Shared/
+  Error.cshtml
+  _AuthLayout.cshtml
+  _Layout.cshtml
+  _ValidationScriptsPartial.cshtml
+ User/
+  Create.cshtml
+  Edit.cshtml
+  Index.cshtml
  _ViewImports.cshtml
  _ViewStart.cshtml
 
 [dynamicFiles]
+Views/AdditionalService/
+ Create.cshtml
+ Edit.cshtml
+ Index.cshtml
 Views/Auth/
  Accessdenied.cshtml
  Login.cshtml
+Views/Brand/
+ Create.cshtml
+ Edit.cshtml
+ Index.cshtml
 Views/Car/
  Create.cshtml
+ Edit.cshtml
  Index.cshtml
- Update.cshtml
-Views/Home/
- Index.cshtml
- Privacy.cshtml
-Views/Shared/
- Error.cshtml
- _AuthLayout.cshtml
- _Layout.cshtml
- _ValidationScriptsPartial.cshtml
 Views/
+ Customer/Index.cshtml
+ Dashboard/Index.cshtml
+ Home/
+  Index.cshtml
+  Privacy.cshtml
+ Location/
+  Create.cshtml
+  Edit.cshtml
+  Index.cshtml
+ Profile/Index.cshtml
+ Rental/
+  Create.cshtml
+  Index.cshtml
+ Shared/
+  Error.cshtml
+  _AuthLayout.cshtml
+  _Layout.cshtml
+  _ValidationScriptsPartial.cshtml
+ User/
+  Create.cshtml
+  Edit.cshtml
+  Index.cshtml
  _ViewImports.cshtml
  _ViewStart.cshtml

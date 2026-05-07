@@ -4,6 +4,9 @@ namespace RentACar.Application.DTOs.Rental;
 
 public class RentalCreateDto
 {
+    // Admin panelinden kiralama yaparken müşteriyi seçebilmek için
+    public int CustomerId { get; set; }
+
     [Required(ErrorMessage = "Araç seçimi zorunludur.")]
     public int CarId { get; set; }
 

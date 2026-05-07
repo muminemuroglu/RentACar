@@ -12,6 +12,6 @@ public abstract class BaseEntity
         TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, _turkeyTz);
 
     public DateTime CreatedDate { get; set; } = TurkeyTime;
-    public DateTime? UpdatedDate { get; set; }= TurkeyTime;
+    public DateTime? UpdatedDate { get; set; } = TurkeyTime;
     public bool IsDeleted { get; set; } = false;
 }

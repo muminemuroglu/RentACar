@@ -4,8 +4,10 @@ using Microsoft.Extensions.DependencyInjection;
 using RentACar.Infrastructure.Context;
 using RentACar.Infrastructure.Repositories;
 using RentACar.Application.Interfaces;
-using RentACar.Infrastructure.Services;
+//using RentACar.Domain.Interfaces;
 using RentACar.Application.Helpers;
+using RentACar.Infrastructure.Services;
+
 
 namespace RentACar.Infrastructure;
 
@@ -18,7 +20,8 @@ public static class DependencyInjection
 
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-        
+        services.AddScoped<IJwtTokenHelper, JwtTokenHelper>();
+
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IBrandService, BrandService>();
@@ -27,8 +30,10 @@ public static class DependencyInjection
         services.AddScoped<IRentalService, RentalService>();
         services.AddScoped<IAdditionalServiceService, AdditionalServiceService>();
         services.AddScoped<IDashboardService, DashboardService>();
-        // Mevcut servisler...
-services.AddScoped<IJwtTokenHelper, JwtTokenHelper>();
+        services.AddScoped<ICustomerService, CustomerService>();
+        services.AddScoped<IIdentityValidationService, MernisIdentityValidationService>();
+        services.AddScoped<IFindeksService, FakeFindeksService>();
+        
 
         return services;
     }

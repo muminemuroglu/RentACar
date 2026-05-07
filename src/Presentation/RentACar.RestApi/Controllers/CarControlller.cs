@@ -11,53 +11,68 @@ namespace RentACar.RestApi.Controllers;
 public class CarController : ControllerBase
 {
     private readonly ICarService _carService;
-    public CarController(ICarService carService) => _carService = carService;
 
-    // Herkese Açık: Müşteriler araç arayabilir
-    [HttpPost("SearchAvailable")]
-    public async Task<IActionResult> SearchAvailableCars([FromBody] AvailableCarSearchDto searchDto)
+    public CarController(ICarService carService)
     {
-        return Ok(await _carService.GetAvailableCarsAsync(searchDto));
+        _carService = carService;
     }
 
-    // Herkese Açık: Tüm araçların vitrini (Sayfalamalı)
+    // GET api/Car/Paged?pageNumber=1&pageSize=10  ← Sayfalanmış liste
     [HttpGet("Paged")]
+    [AllowAnonymous]
     public async Task<IActionResult> GetPaged([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
     {
-        return Ok(await _carService.GetPagedCarsAsync(pageNumber, pageSize));
+        var result = await _carService.GetPagedAsync(pageNumber, pageSize);
+        return Ok(result);
     }
 
+    // GET api/Car/All  ← Tümünü çek (dropdown vs.)
+    [HttpGet("All")]
+    [AllowAnonymous]
+    public async Task<IActionResult> GetAll()
+    {
+        var result = await _carService.GetAllAsync();
+        return Ok(result);
+    }
+
+    // GET api/Car/{id}
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetById(int id) => Ok(await _carService.GetCarByIdAsync(id));
+    [AllowAnonymous]
+    public async Task<IActionResult> GetById(int id)
+    {
+        var result = await _carService.GetByIdAsync(id);
+        return result.Success ? Ok(result) : NotFound(result);
+    }
 
-
+    // POST api/Car  ← Multipart form-data ile alır
     [HttpPost]
     [Authorize(Roles = "Admin,CompanyManager,Staff")]
-    public async Task<IActionResult> Create([FromForm] CarCreateDto dto) => Ok(await _carService.CreateCarAsync(dto));
-
-    [HttpPut("{id}")]
-    [Authorize(Roles = "Admin,Staff")] // Yönergeye göre personel yetkisi
-    public async Task<IActionResult> Update(int id, [FromForm] CarUpdateDto carUpdateDto)
+    [Consumes("multipart/form-data")]
+    public async Task<IActionResult> Create([FromForm] CarCreateDto dto)
     {
-        // 1. Güvenlik Kontrolü: URL ID'si ile Body ID'si aynı mı?
-        if (id != carUpdateDto.Id)
-        {
-            return BadRequest(ApiResponse<object>.ErrorResult("URL'deki ID ile gönderilen nesnenin ID'si uyuşmuyor."));
-        }
-
-        // 2. Servis Çağrısı
-        var result = await _carService.UpdateCarAsync(carUpdateDto);
-
-        if (!result.Success)
-        {
-            return NotFound(result);
-        }
-
-        // 3. Başarılı Yanıt (Yönergeye uygun boş nesne ile)
-        return Ok(ApiResponse<object>.SuccessResult(new { }, "Araç bilgileri başarıyla güncellendi."));
+        var result = await _carService.CreateAsync(dto);
+        return result.Success ? Ok(result) : BadRequest(result);
     }
 
+    // PUT api/Car/{id}  ← Multipart form-data ile alır
+    [HttpPut("{id}")]
+    [Authorize(Roles = "Admin,CompanyManager,Staff")]
+    [Consumes("multipart/form-data")]
+    public async Task<IActionResult> Update(int id, [FromForm] CarUpdateDto dto)
+    {
+        if (id != dto.Id)
+            return BadRequest(ApiResponse<object>.ErrorResult("URL'deki ID ile gönderilen nesnenin ID'si uyuşmuyor."));
+
+        var result = await _carService.UpdateAsync(id, dto);
+        return result.Success ? Ok(result) : BadRequest(result);
+    }
+
+    // DELETE api/Car/{id}
     [HttpDelete("{id}")]
     [Authorize(Roles = "Admin,CompanyManager,Staff")]
-    public async Task<IActionResult> Delete(int id) => Ok(await _carService.DeleteCarAsync(id));
+    public async Task<IActionResult> Delete(int id)
+    {
+        var result = await _carService.DeleteAsync(id);
+        return result.Success ? Ok(result) : BadRequest(result);
+    }
 }

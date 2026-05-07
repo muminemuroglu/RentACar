@@ -30,6 +30,10 @@ namespace RentACar.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("CarSegment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
@@ -70,6 +74,9 @@ namespace RentACar.Infrastructure.Migrations
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
+
+                    b.Property<string>("LogoUrl")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -142,6 +149,44 @@ namespace RentACar.Infrastructure.Migrations
                     b.HasIndex("CurrentLocationId");
 
                     b.ToTable("Cars");
+                });
+
+            modelBuilder.Entity("RentACar.Domain.Entities.CarImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CarId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("DATEADD(HOUR, 3, GETUTCDATE())");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsMain")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("DATEADD(HOUR, 3, GETUTCDATE())");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CarId");
+
+                    b.ToTable("CarImage");
                 });
 
             modelBuilder.Entity("RentACar.Domain.Entities.Company", b =>
@@ -380,6 +425,10 @@ namespace RentACar.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("IdentityNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -428,6 +477,17 @@ namespace RentACar.Infrastructure.Migrations
                     b.Navigation("Brand");
 
                     b.Navigation("CurrentLocation");
+                });
+
+            modelBuilder.Entity("RentACar.Domain.Entities.CarImage", b =>
+                {
+                    b.HasOne("RentACar.Domain.Entities.Car", "Car")
+                        .WithMany("CarImages")
+                        .HasForeignKey("CarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Car");
                 });
 
             modelBuilder.Entity("RentACar.Domain.Entities.Customer", b =>
@@ -483,6 +543,11 @@ namespace RentACar.Infrastructure.Migrations
                         .HasForeignKey("CompanyId");
 
                     b.Navigation("Company");
+                });
+
+            modelBuilder.Entity("RentACar.Domain.Entities.Car", b =>
+                {
+                    b.Navigation("CarImages");
                 });
 #pragma warning restore 612, 618
         }

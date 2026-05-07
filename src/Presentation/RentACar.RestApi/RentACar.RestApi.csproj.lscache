@@ -59,6 +59,7 @@ Controllers/
  AuthController.cs
  BrandController.cs
  CarControlller.cs
+ CustomerController.cs
  DashboardController.cs
  LocationController.cs
  RentalController.cs

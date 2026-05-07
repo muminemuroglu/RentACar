@@ -58,6 +58,7 @@ Entities/
  BaseEntity.cs
  Brand.cs
  Car.cs
+ CarImage.cs
  Company.cs
  Customer.cs
  Location.cs
@@ -65,6 +66,7 @@ Entities/
  Rental.cs
  User.cs
 Interfaces/
+ ICarRepository.cs
  IGenericRepository.cs
  IUnitOfWork.cs
 obj/Debug/net9.0/

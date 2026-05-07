@@ -81,6 +81,7 @@ DTOs/Company/
  CompanyDto.cs
  CompanyUpdateDto.cs
 DTOs/Customer/
+ CustomerCreateDto.cs
  CustomerDeleteDto.cs
  CustomerDto.cs
  CustomerUpdateDto.cs
@@ -113,7 +114,10 @@ Interfaces/
  IAuthService.cs
  IBrandService.cs
  ICarService.cs
+ ICustomerService.cs
  IDashboardService.cs
+ IFindeksService.cs
+ IIdentityValidationService.cs
  ILocationService.cs
  IRentalService.cs
  IUserService.cs
