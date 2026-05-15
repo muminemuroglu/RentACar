@@ -22,6 +22,61 @@ namespace RentACar.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("RentACar.Domain.Entities.AdditionalProduct", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("DATEADD(HOUR, 3, GETUTCDATE())");
+
+                    b.Property<decimal>("DailyPrice")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
+
+                    b.Property<string>("IconName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsQuantityBased")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("MaxQuantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("DATEADD(HOUR, 3, GETUTCDATE())");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AdditionalProducts");
+                });
+
             modelBuilder.Entity("RentACar.Domain.Entities.AdditionalService", b =>
                 {
                     b.Property<int>("Id")
@@ -56,7 +111,7 @@ namespace RentACar.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AdditionalServices");
+                    b.ToTable("AdditionalService");
                 });
 
             modelBuilder.Entity("RentACar.Domain.Entities.Brand", b =>
@@ -289,6 +344,58 @@ namespace RentACar.Infrastructure.Migrations
                     b.ToTable("Customers");
                 });
 
+            modelBuilder.Entity("RentACar.Domain.Entities.InsurancePackage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("DATEADD(HOUR, 3, GETUTCDATE())");
+
+                    b.Property<decimal>("DailyPrice")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FeaturesJson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsRecommended")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("DATEADD(HOUR, 3, GETUTCDATE())");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("InsurancePackages");
+                });
+
             modelBuilder.Entity("RentACar.Domain.Entities.Location", b =>
                 {
                     b.Property<int>("Id")
@@ -327,6 +434,83 @@ namespace RentACar.Infrastructure.Migrations
                     b.ToTable("Locations");
                 });
 
+            modelBuilder.Entity("RentACar.Domain.Entities.Payment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Amount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("BinNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CardAssociation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CardFamily")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CardHolderName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CardLastFourDigits")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("DATEADD(HOUR, 3, GETUTCDATE())");
+
+                    b.Property<string>("Currency")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FailureReason")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("IyzicoConversationId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IyzicoPaymentId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Method")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("PaidAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("DATEADD(HOUR, 3, GETUTCDATE())");
+
+                    b.Property<int>("RentalId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ResponseJson")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("DATEADD(HOUR, 3, GETUTCDATE())");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RentalId");
+
+                    b.ToTable("Payments");
+                });
+
             modelBuilder.Entity("RentACar.Domain.Entities.Rental", b =>
                 {
                     b.Property<int>("Id")
@@ -334,6 +518,10 @@ namespace RentACar.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("AdditionalProductsTotal")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("CarId")
                         .HasColumnType("int");
@@ -346,8 +534,39 @@ namespace RentACar.Infrastructure.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
+                    b.Property<string>("DriverAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DriverBirthDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DriverEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DriverFirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DriverIdentityNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DriverLastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DriverLicenseNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DriverPhone")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("DropOffLocationId")
                         .HasColumnType("int");
+
+                    b.Property<int?>("InsurancePackageId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("InsuranceTotal")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -376,6 +595,10 @@ namespace RentACar.Infrastructure.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("SubTotal")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<decimal>("TotalAmount")
                         .HasColumnType("decimal(18,2)");
 
@@ -392,9 +615,58 @@ namespace RentACar.Infrastructure.Migrations
 
                     b.HasIndex("DropOffLocationId");
 
+                    b.HasIndex("InsurancePackageId");
+
                     b.HasIndex("PickUpLocationId");
 
                     b.ToTable("Rentals");
+                });
+
+            modelBuilder.Entity("RentACar.Domain.Entities.RentalAdditionalProduct", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AdditionalProductId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("DATEADD(HOUR, 3, GETUTCDATE())");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RentalId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("DATEADD(HOUR, 3, GETUTCDATE())");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AdditionalProductId");
+
+                    b.HasIndex("RentalId");
+
+                    b.ToTable("RentalAdditionalProducts");
                 });
 
             modelBuilder.Entity("RentACar.Domain.Entities.User", b =>
@@ -501,6 +773,17 @@ namespace RentACar.Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("RentACar.Domain.Entities.Payment", b =>
+                {
+                    b.HasOne("RentACar.Domain.Entities.Rental", "Rental")
+                        .WithMany("Payments")
+                        .HasForeignKey("RentalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Rental");
+                });
+
             modelBuilder.Entity("RentACar.Domain.Entities.Rental", b =>
                 {
                     b.HasOne("RentACar.Domain.Entities.Car", "Car")
@@ -521,6 +804,11 @@ namespace RentACar.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("RentACar.Domain.Entities.InsurancePackage", "InsurancePackage")
+                        .WithMany("Rentals")
+                        .HasForeignKey("InsurancePackageId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("RentACar.Domain.Entities.Location", "PickUpLocation")
                         .WithMany()
                         .HasForeignKey("PickUpLocationId")
@@ -533,7 +821,28 @@ namespace RentACar.Infrastructure.Migrations
 
                     b.Navigation("DropOffLocation");
 
+                    b.Navigation("InsurancePackage");
+
                     b.Navigation("PickUpLocation");
+                });
+
+            modelBuilder.Entity("RentACar.Domain.Entities.RentalAdditionalProduct", b =>
+                {
+                    b.HasOne("RentACar.Domain.Entities.AdditionalProduct", "AdditionalProduct")
+                        .WithMany("RentalProducts")
+                        .HasForeignKey("AdditionalProductId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("RentACar.Domain.Entities.Rental", "Rental")
+                        .WithMany("AdditionalProducts")
+                        .HasForeignKey("RentalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AdditionalProduct");
+
+                    b.Navigation("Rental");
                 });
 
             modelBuilder.Entity("RentACar.Domain.Entities.User", b =>
@@ -545,9 +854,26 @@ namespace RentACar.Infrastructure.Migrations
                     b.Navigation("Company");
                 });
 
+            modelBuilder.Entity("RentACar.Domain.Entities.AdditionalProduct", b =>
+                {
+                    b.Navigation("RentalProducts");
+                });
+
             modelBuilder.Entity("RentACar.Domain.Entities.Car", b =>
                 {
                     b.Navigation("CarImages");
+                });
+
+            modelBuilder.Entity("RentACar.Domain.Entities.InsurancePackage", b =>
+                {
+                    b.Navigation("Rentals");
+                });
+
+            modelBuilder.Entity("RentACar.Domain.Entities.Rental", b =>
+                {
+                    b.Navigation("AdditionalProducts");
+
+                    b.Navigation("Payments");
                 });
 #pragma warning restore 612, 618
         }

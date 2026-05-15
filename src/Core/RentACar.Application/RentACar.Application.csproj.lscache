@@ -54,39 +54,41 @@ TemporaryDependencyNodeTargetIdentifier=net9.0
 
 [sourceFiles]
 DependencyInjection.cs
-DTOs/AdditionalService/
- AdditionalServiceCreateDto.cs
- AdditionalServiceDeleteDto.cs
- AdditionalServiceDto.cs
- AdditionalServiceUpdateDto.cs
-DTOs/Auth/
- AuthResponseDto.cs
- ChangePasswordDto.cs
- LoginDto.cs
- RegisterCompanyDto.cs
- RegisterCustomerDto.cs
- RegisterDto.cs
-DTOs/Brand/
- BrandCreateDto.cs
- BrandDto.cs
- BrandUpdateDto.cs
-DTOs/Car/
- AvailableCarSearchDto.cs
- CarCreateDto.cs
- CarDto.cs
- CarUpdateDto.cs
-DTOs/Company/
- CompanyCreateDto.cs
- CompanyDeleteDto.cs
- CompanyDto.cs
- CompanyUpdateDto.cs
-DTOs/Customer/
- CustomerCreateDto.cs
- CustomerDeleteDto.cs
- CustomerDto.cs
- CustomerUpdateDto.cs
 DTOs/
+ AdditionalProducts/AdditionalProductDto.cs
+ AdditionalService/
+  AdditionalServiceCreateDto.cs
+  AdditionalServiceDeleteDto.cs
+  AdditionalServiceDto.cs
+  AdditionalServiceUpdateDto.cs
+ Auth/
+  AuthResponseDto.cs
+  ChangePasswordDto.cs
+  LoginDto.cs
+  RegisterCompanyDto.cs
+  RegisterCustomerDto.cs
+  RegisterDto.cs
+ Brand/
+  BrandCreateDto.cs
+  BrandDto.cs
+  BrandUpdateDto.cs
+ Car/
+  AvailableCarSearchDto.cs
+  CarCreateDto.cs
+  CarDto.cs
+  CarUpdateDto.cs
+ Company/
+  CompanyCreateDto.cs
+  CompanyDeleteDto.cs
+  CompanyDto.cs
+  CompanyUpdateDto.cs
+ Customer/
+  CustomerCreateDto.cs
+  CustomerDeleteDto.cs
+  CustomerDto.cs
+  CustomerUpdateDto.cs
  Dashboard/DashboardStatsDto.cs
+ Insurance/InsurancePackageDto.cs
  Location/
   LocationCreateDto.cs
   LocationDto.cs
@@ -120,6 +122,7 @@ Interfaces/
  IIdentityValidationService.cs
  ILocationService.cs
  IRentalService.cs
+ IReservationService.cs
  IUserService.cs
 Mappings/AutoMapperProfile.cs
 obj/Debug/net9.0/

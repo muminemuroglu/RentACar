@@ -76,6 +76,8 @@ Migrations/
  20260430120735_InitialMigration.Designer.cs
  20260507194913_InitialMigration2.cs
  20260507194913_InitialMigration2.Designer.cs
+ 20260515071153_InitialMigration3.cs
+ 20260515071153_InitialMigration3.Designer.cs
  AppDbContextModelSnapshot.cs
 obj/Debug/net9.0/
  .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
@@ -86,6 +88,7 @@ Repositories/
  GenericRepository.cs
  UnitOfWork.cs
 Services/
+ AdditionalProductService.cs
  AdditionalService.cs
  AuthService.cs
  BrandService.cs
@@ -93,9 +96,11 @@ Services/
  CustomerService.cs
  DashboardService.cs
  FakeFindeksService.cs
+ InsurancePackageService.cs
  LocationService.cs
  MernisIdentityValidationService.cs
  RentalService.cs
+ ReservationService.cs
  UserService.cs
 
 [metadataReferences]

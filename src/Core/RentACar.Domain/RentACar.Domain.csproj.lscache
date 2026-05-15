@@ -54,6 +54,7 @@ TemporaryDependencyNodeTargetIdentifier=net9.0
 
 [sourceFiles]
 Entities/
+ AdditionalProduct.cs
  AdditionalService.cs
  BaseEntity.cs
  Brand.cs
@@ -61,9 +62,12 @@ Entities/
  CarImage.cs
  Company.cs
  Customer.cs
+ InsurancePackage.cs
  Location.cs
  PaginationModel.cs
+ Payment.cs
  Rental.cs
+ RentalAdditionalProduct.cs
  User.cs
 Interfaces/
  ICarRepository.cs

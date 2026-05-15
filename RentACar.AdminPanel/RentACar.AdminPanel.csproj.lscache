@@ -73,7 +73,7 @@ Models/
   CarListViewModel.cs
   CreateViewModel.cs
   EditViewModel.cs
- CustomerViewModel.cs
+ CustomerListViewModel.cs
  ErrorViewModel.cs
  LocationViewModel.cs
  LoginViewModel.cs
