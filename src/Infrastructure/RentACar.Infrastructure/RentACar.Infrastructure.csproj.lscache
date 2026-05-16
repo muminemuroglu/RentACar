@@ -78,6 +78,8 @@ Migrations/
  20260507194913_InitialMigration2.Designer.cs
  20260515071153_InitialMigration3.cs
  20260515071153_InitialMigration3.Designer.cs
+ 20260516052459_InitialMigration4.cs
+ 20260516052459_InitialMigration4.Designer.cs
  AppDbContextModelSnapshot.cs
 obj/Debug/net9.0/
  .NETCoreApp,Version=v9.0.AssemblyAttributes.cs

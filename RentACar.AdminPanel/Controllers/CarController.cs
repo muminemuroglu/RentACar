@@ -128,7 +128,7 @@ public class CarController : Controller
         {
             var fileContent = new StreamContent(viewModel.ImageFile.OpenReadStream());
             fileContent.Headers.ContentType = new MediaTypeHeaderValue(viewModel.ImageFile.ContentType);
-            content.Add(fileContent, "ImageFile", viewModel.ImageFile.FileName);
+            content.Add(fileContent, "ImageFiles", viewModel.ImageFile.FileName);
         }
 
         var response = await _apiService.PostMultipartAsync<int>("api/Car", content);
@@ -204,7 +204,7 @@ public class CarController : Controller
         {
             var fileContent = new StreamContent(viewModel.ImageFile.OpenReadStream());
             fileContent.Headers.ContentType = new MediaTypeHeaderValue(viewModel.ImageFile.ContentType);
-            content.Add(fileContent, "ImageFile", viewModel.ImageFile.FileName);
+            content.Add(fileContent, "ImageFiles", viewModel.ImageFile.FileName);
         }
 
         var response = await _apiService.PutMultipartAsync<object>($"api/Car/{viewModel.Id}", content);

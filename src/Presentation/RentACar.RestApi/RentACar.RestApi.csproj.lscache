@@ -59,7 +59,7 @@ Controllers/
  AdditionalServiceController.cs
  AuthController.cs
  BrandController.cs
- CarControlller.cs
+ CarController.cs
  CustomerController.cs
  DashboardController.cs
  InsurancePackageController.cs
